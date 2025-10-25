@@ -1,48 +1,123 @@
-body{
+/*
+ * HEALTH & WELLNESS THEME: Clean, Trustworthy, and Soothing
+ * Using soft white, calming greens, and professional blues for a clear interface.
+ */
+
+:root {
+    /* Define a soothing, reliable color palette */
+    --primary-green: #38b000; /* Vibrant but natural green for action/health */
+    --light-green: #e9f5db; /* Very light green for subtle accents */
+    --accent-blue: #4a90e2; /* Professional blue for titles/focus */
+    --text-dark: #2c3e50; /* Dark navy text for readability */
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
     margin: 0;
-    background:linear-gradient(to left bottom, cornflowerblue, lightblue);
+    /* Clean, soft background gradient resembling natural light */
+    background: linear-gradient(to right bottom, #f3f6fb, #eef4ff); 
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    /* Professional, clean font stack */
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: var(--text-dark); 
 }
-.container{
-    background: rgba(255, 255, 255, .2);
-    padding: 20px;
+
+/* * The main container: Clean, slightly rounded 'medical' card */
+.container {
+    background: #ffffff; /* Pure white background */
+    padding: 40px; /* Generous padding for breathing room */
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    box-shadow: 0 1px 10px rgba(0, 0 ,0, .3);
-    margin: 10px;
+    border-radius: 12px; 
+    
+    /* Clean, soft shadow for a subtle lift */
+    box-shadow: 0 10px 30px var(--card-shadow); 
+    
+    /* Subtle green border to reinforce the health theme */
+    border: 1px solid #e0e0e0;
+    
+    margin: 20px;
+    max-width: 400px; 
+    text-align: center; 
+    transition: all 0.3s ease;
+}
 
+.heading {
+    font-size: 32px; 
+    color: var(--accent-blue); /* Professional blue for trust */
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--light-green); /* Subtle underline */
+    padding-bottom: 10px;
 }
-.heading{
-    font-size: 38px;
-}
-.input{
-    padding: 10px 20px;
-    font-size: 18px;
-    background: rgba(255, 255, 255, .4);
-    border-color: rgba(255, 255, 255, .5);
-    margin: 10px;
 
+/* * Inputs: Minimalist, clean, and easy to read */
+.input {
+    padding: 14px 18px;
+    font-size: 16px;
+    background: #f8f8f8; /* Very light gray background */
+    color: var(--text-dark);
+    border: 1px solid #dcdfe4; 
+    border-radius: 8px; 
+    margin: 10px 0;
+    outline: none; 
+    transition: all 0.3s ease;
 }
-.btn{
-    background-color:cadetblue;
+
+.input:focus {
+    border-color: var(--primary-green);
+    /* Clean focus ring using the primary health color */
+    box-shadow: 0 0 0 3px rgba(56, 176, 0, 0.2); 
+    background: #ffffff;
+}
+
+/* * Button (CTA): Clear call to action using the health green */
+.btn {
+    background-color: var(--primary-green); /* Primary health green */
+    color: white; 
     border: none;
-    border-radius: 5px;
-    margin: 10px;
-    font-size: 25px;
-    font-weight: 400;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    box-shadow: 0 0 4px rgba(0, 0 ,0, .3);
+    border-radius: 8px; 
+    margin: 30px 0 15px 0; 
+    padding: 16px 25px;
+    font-size: 18px;
+    font-weight: 600; 
+    font-family: inherit; 
+    text-transform: uppercase;
+    
+    /* Soft shadow to make it feel tangible */
+    box-shadow: 0 4px 10px rgba(56, 176, 0, 0.3); 
     cursor: pointer;
+    transition: all 250ms ease-out;
 }
-.btn:hover{
-    box-shadow: 0 0 8px rgba(0, 0 ,0, .3);
-    transition: all 300ms ease;
-    font-weight: 500;
 
+.btn:hover {
+    background-color: #319a00; /* Slightly darker green on hover */
+    box-shadow: 0 6px 15px rgba(56, 176, 0, 0.4); 
+    transform: translateY(-1px);
+}
+
+.info-text {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark); 
+    text-align: center;
+}
+
+/* * The Result Span: The focus of the calculation */
+#weight-condition {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--accent-blue); /* Use professional blue for the result text */
+    transition: color 0.5s ease; 
+}
+
+/* Specific styling for the disabled result input */
+#bmi-result {
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary-green);
 }
